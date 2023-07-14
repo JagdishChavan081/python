@@ -15,7 +15,7 @@ bank account:
 •	 Customer name
 •	 Password
 •	 Balance"""
-
+from typing import Any
 
 # approach: procedural approach
 # title: Bank Version 3
@@ -59,4 +59,79 @@ def newaccount(accountnumber: str, name: str, balance: int, password: int) -> No
 def show():
     global account0Name, account0Balance, account0Password
     global account1Name, account1Balance, account1Password
-    pass
+
+    if account0Name != '':
+        print('Account0')
+        print('   Name: ',account0Name)
+        print('   Balance: ',account0Balance)
+        print('   Password:',account0Password)
+        print()
+
+    if account1Name != '':
+        print('Account1')
+        print('   Name: ', account1Name)
+        print('   Balance: ', account1Balance)
+        print('   Password:', account1Password)
+        print()
+
+#function3 get current balance
+def getBalance(accountNumber: int, password: int) -> None | int:
+    """
+
+    :param accountNumber: account number of customer
+    :param password: password of customer
+    :return: None | Int
+    """
+    global account0Name, account0Balance, account0Password
+    global account1Name, account1Balance, account1Password
+
+    if accountNumber == 0:
+        if password != account0Password:
+            print('Incorrect password')
+            return None
+        return account0Balance
+
+    if accountNumber == 1:
+        if password != account1Password:
+            print('Incorrect password')
+            return None
+        return account1Balance
+
+
+#function4 deposit amount into account
+def deposit(account_number: int, password: int, amount_d: int) -> None | int:
+    """
+    :param account_number: account number of customer
+    :param password: password of customer
+    :param amount_d: amount to deposit
+    :return: None | int
+    """
+    global account0Name, account0Balance, account0Password
+    global account1Name, account1Balance, account1Password
+
+    #deposit in account =0
+    if account_number == 0:
+        if password != account0Password:
+            print('Incorrect password')
+            return None
+
+    amount_d = int("Enter the amount you want to deposit")
+    if amount_d < 0:
+        print("enter valid amount")
+        return None
+
+    account0Balance = account0Balance + amount_d
+    return account0Balance
+
+    #deposit for account = 1
+    if account_number == 1:
+        if password != account1Password:
+            print('Incorrect password')
+            return None
+
+
+
+
+
+
+
