@@ -18,7 +18,7 @@ bank account:
 
 # approach: procedural approach
 # title: Bank Version 2
-# implementation: Single_account Without Functions
+# implementation: Single_account With Functions
 # author: Jagdish_Chavan
 # date: 13/7/2023
 
